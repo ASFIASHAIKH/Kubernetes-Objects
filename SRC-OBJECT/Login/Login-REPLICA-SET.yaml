@@ -1,0 +1,19 @@
+# login REPLICA-SETS.yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: login-replica-set
+spec:
+  selector:
+    matchLabels:
+      app: login
+  template:
+    metadata:
+      labels:
+        app: login
+    spec:
+      containers:
+      - name: login-container
+        image: asfiyask/kubernetes-objects:v1.2
+        ports:
+        - containerPort: 80

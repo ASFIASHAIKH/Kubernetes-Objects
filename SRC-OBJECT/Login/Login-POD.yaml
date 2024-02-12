@@ -1,0 +1,13 @@
+# LOGIN POD.yaml
+apiVersion: v1
+kind: POD
+metadata:
+  name: login-pod
+  labels:
+    name: login
+spec:
+  containers:
+  - name: login-container
+    image: asfiyask/kubernetes-objects:v1.2
+    ports:
+      - containerPort: 80

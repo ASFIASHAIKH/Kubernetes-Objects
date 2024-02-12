@@ -1,0 +1,22 @@
+# LOGIN DEPLOYMENT.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-deployment
+  labels:
+    app: login
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: login
+  template:
+    metadata:
+      labels:
+        app: login
+    spec:
+      containers:
+      - name: login-container
+        image: asfiyask/kubernetes-objects:v1.2
+        ports:
+        - containerPort: 80  
