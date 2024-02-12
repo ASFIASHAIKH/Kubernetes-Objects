@@ -1,0 +1,13 @@
+# DASHBOARD POD.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dashboard-pod
+  labels:
+    name: dashboard
+spec:
+  containers:
+  - name: dashboard-container
+    image: asfiyask/kubernetes-objects:v1.1
+    ports:
+      - containerPort: 80

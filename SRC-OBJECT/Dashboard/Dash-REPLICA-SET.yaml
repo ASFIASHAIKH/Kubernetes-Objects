@@ -1,0 +1,19 @@
+# DASHBOARD REPLICA-SETS.yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: dashboard-replica-set
+spec:
+  selector:
+    matchLabels:
+      app: dashboard
+  template:
+    metadata:
+      labels:
+        app: dashboard
+    spec:
+      containers:
+      - name: dashboard-container
+        image: asfiyask/kubernetes-objects:v1.1
+        ports:
+        - containerPort: 80
