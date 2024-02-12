@@ -1,0 +1,20 @@
+# SEARCH Replication-Controller.yaml
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: search-repli-controller
+spec:
+  replicas: 2
+  selector:
+    app: search
+  template:
+    metadata:
+      name: search
+      labels:
+        app: search
+    spec:
+      containers:
+        - name: search-container
+          image: asfiyask/kubernetes-objects:v1.3
+          ports:
+            - containerPort: 80

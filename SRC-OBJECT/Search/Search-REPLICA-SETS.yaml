@@ -1,0 +1,19 @@
+# SEARCH REPLICA-SETS.yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: search-replica-set
+spec:
+  selector:
+    matchLabels:
+      app: search
+  template:
+    metadata:
+      labels:
+        app: search
+    spec:
+      containers:
+      - name: search-container
+        image: asfiyask/kubernetes-objects:v1.3
+        ports:
+        - containerPort: 80

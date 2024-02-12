@@ -1,0 +1,13 @@
+# SEARCH POD.yaml
+apiVersion: v1
+kind: POD
+metadata:
+  name: search-pod
+  labels:
+    name: search
+spec:
+  containers:
+  - name: search-container
+    image: asfiyask/kubernetes-objects:v1.3
+    ports:
+      - containerPort: 80

@@ -1,0 +1,22 @@
+# SEARCH DEPLOYMENT.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: search-deployment
+  labels:
+    app: search
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: search
+  template:
+    metadata:
+      labels:
+        app: search
+    spec:
+      containers:
+      - name: search-container
+        image: asfiyask/kubernetes-objects:v1.3
+        ports:
+        - containerPort: 80  
