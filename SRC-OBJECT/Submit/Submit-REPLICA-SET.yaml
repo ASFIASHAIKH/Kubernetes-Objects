@@ -1,0 +1,19 @@
+# SUBMIT REPLICA-SETS.yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: submit-replica-set
+spec:
+  selector:
+    matchLabels:
+      app: submit
+  template:
+    metadata:
+      labels:
+        app: submit
+    spec:
+      containers:
+      - name: submit-container
+        image: asfiyask/kubernetes-objects:v1.4
+        ports:
+        - containerPort: 80

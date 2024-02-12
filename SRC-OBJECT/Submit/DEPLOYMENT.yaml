@@ -1,0 +1,23 @@
+# SUBMIT DEPLOYMENT.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: submit-deployment
+  labels:
+    app: submit
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: submit
+  template:
+    metadata:
+      labels:
+        app: submit
+    spec:
+      containers:
+      - name: submit-container
+        image: asfiyask/kubernetes-objects:v1.4
+        ports:
+        - containerPort: 80  
+

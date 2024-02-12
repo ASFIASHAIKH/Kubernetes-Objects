@@ -1,0 +1,13 @@
+# submit POD.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: submit-pod
+  labels:
+    name: submit
+spec:
+  containers:
+  - name: submit-container
+    image: asfiyask/kubernetes-objects:v1.4
+    ports:
+      - containerPort: 80
